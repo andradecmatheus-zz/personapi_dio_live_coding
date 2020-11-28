@@ -23,10 +23,6 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 import java.util.List;
 
-@SpringBootApplication
-@ComponentScan({"one.digitalinnovation.personapi.controller"})
-
-
 @RestController
 @RequestMapping("/api/v1/people")
 @AllArgsConstructor(onConstructor = @__(@Autowired))
