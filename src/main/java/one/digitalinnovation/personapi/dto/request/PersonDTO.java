@@ -19,7 +19,7 @@ public class PersonDTO {
 
     private Long id;
 
-    @NotEmpty
+    @NotEmpty //nunca pode ser vazio
     @Size(min = 2, max = 100)
     private String firstName;
 
@@ -28,12 +28,17 @@ public class PersonDTO {
     private String lastName;
 
     @NotEmpty
-    @CPF
+    @CPF //A biblio Validation já tem uma validação automática para CPF de formato BR
     private String cpf;
 
     private String birthDate;
 
-    @Valid
+    @Valid // qnd for passar os dados do telefone, cada um dos outros dados da lista precisam ser validados
     @NotEmpty
     private List<PhoneDTO> phones;
 }
+
+/*
+    Objeto responsável por receber todos os dados de entrada, mapeá-los aqui ao invés de no Entity.
+    Aqui é possível fazer a validação no momento da requisição HTTP, na própria camada de Controller. Tamanho dos chars...
+ */

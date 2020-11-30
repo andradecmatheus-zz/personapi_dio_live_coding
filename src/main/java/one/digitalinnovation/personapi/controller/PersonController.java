@@ -28,23 +28,23 @@ import java.util.List;
 @AllArgsConstructor(onConstructor = @__(@Autowired))
 public class PersonController {
 
-    private PersonService personService;
+    private PersonService personService; // injeção de dependência da referida classe
 
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping // método de criação
+    @ResponseStatus(HttpStatus.CREATED) //para retornar o código 201
     public MessageResponseDTO createPerson(@RequestBody @Valid PersonDTO personDTO) {
         return personService.createPerson(personDTO);
     }
 
-    @GetMapping
+    @GetMapping // buscar todos
     public List<PersonDTO> listAll() {
         return personService.listAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{id}") // buscar especificamente uma pessoa
     public PersonDTO findById(@PathVariable Long id) throws PersonNotFoundException {
         return personService.findById(id);
-    }
+    } // PathVariable = indica que está passando um ID de uma pessoa
 
     @PutMapping("/{id}")
     public MessageResponseDTO updateById(@PathVariable Long id, @RequestBody @Valid PersonDTO personDTO) throws PersonNotFoundException {
@@ -57,3 +57,6 @@ public class PersonController {
         personService.delete(id);
     }
 }
+
+/* Controller - serve para conectar o usuário/requisição com o ponto de entrada da aplicação. Não tem sentido colocar
+    regra de negócio dentro de um Controller*/

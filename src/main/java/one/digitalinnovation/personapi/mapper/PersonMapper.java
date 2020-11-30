@@ -16,3 +16,8 @@ public interface PersonMapper {
 
     PersonDTO toDTO(Person person);
 }
+
+/*
+*   Atraveś da biblio Mapstruct disponibiliza por meio de uma única interface descreve um método para fazr a conversão
+* de uma objeto DTO para uma entidade, e de uma entidade para um objeto DTO
+* */

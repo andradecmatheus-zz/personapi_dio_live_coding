@@ -20,14 +20,14 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 public class PersonServiceTest {
 
-    @Mock
+    @Mock // indica que é um mock, que será criado um objeto dublê/fake dele
     private PersonRepository personRepository;
 
-    @InjectMocks
+    @InjectMocks //Injetar o mock da classe acima em PersonService
     private PersonService personService;
 
     @Test
-    void testGivenPersonDTOThenReturnSavedMessage() {
+    void testGivenPersonDTOThenReturnSavedMessage() { // ao criar um DTO retornará um msgm de sucesso aqui
         PersonDTO personDTO = createFakeDTO();
         Person expectedSavedPerson = createFakeEntity();
 
@@ -37,6 +37,7 @@ public class PersonServiceTest {
         MessageResponseDTO succesMessage = personService.createPerson(personDTO);
 
         assertEquals(expectedSuccessMessage, succesMessage);
+        // assertEquals: a msgm esperada tem q ser = a que estou retornando no método
     }
 
     private MessageResponseDTO createExpectedMessageResponse(Long id) {
@@ -46,3 +47,10 @@ public class PersonServiceTest {
                 .build();
     }
 }
+
+/*
+*   linha 20: @ExtendWith(MockitoExtension.class) - injetar que rode com o mockito, que é uma lib p/ criar objetos mocks
+* p/ mockar as dependencias da classe. Significa que será testado somente o código dessa PersonService. Não vai haver
+* interação com PersonRepository visando performance. Gerando um mock, classe fake deste PersonRepository para fazer um
+* teste unitário
+* */

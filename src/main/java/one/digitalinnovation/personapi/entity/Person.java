@@ -33,7 +33,7 @@ public class Person {
     @Column(nullable = false)
     private String lastName;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, unique = true) //unique = valor único
     private String cpf;
 
     private LocalDate birthDate;
@@ -41,3 +41,10 @@ public class Person {
     @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
     private List<Phone> phones;
 }
+
+// mais explicações estão na entity > Phone.
+/*
+linha 41: @OnetoMany = uma pessoa pode ter muitos telefones, mas um telefone só pode pertencer a uma pessoa
+    fetch = é uma estratégia de obtenção de dados;  LAZY = a razão é performática
+    cascade = estratégia de inserção; aqui o cadastro de telefones está sendo feito somente no de pessoas
+*/

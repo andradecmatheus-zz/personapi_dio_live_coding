@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan({"one.digitalinnovation.personapi.controller"})
+//@ComponentScan({"one.digitalinnovation.personapi.controller"})
 public class PersonapiApplication {
 
 	public static void main(String[] args) {
