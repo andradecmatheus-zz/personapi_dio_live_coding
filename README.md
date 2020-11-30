@@ -1,4 +1,4 @@
-<h1> Repositório criado para estudo do Bootcamp Java Developer. Este é o link original do repositório: https://github.com/rpeleias/personapi_digital_innovation_one, todo o conteúdo provém dele. O que o meu tem de diferença são meus comentários.
+<h1> Repositório criado para estudo do Bootcamp Java Developer. Este é o link original do repositório: https://github.com/rpeleias/personapi_digital_innovation_one, todo o conteúdo provém dele. O que o meu tem de diferente são os meus comentários.
 
 <h2>Digital Innovation: Expert class - Desenvolvendo um sistema de gerenciamento de pessoas em API REST com Spring Boot</h2>
 
